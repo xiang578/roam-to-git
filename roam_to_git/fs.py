@@ -54,7 +54,6 @@ def save_markdowns(directory: Path, contents: Dict[str, str]):
         dest.parent.mkdir(parents=True, exist_ok=True)  # Needed if a new directory is used
         # We have to specify encoding because crontab on Mac don't use UTF-8
         # https://stackoverflow.com/questions/11735363/python3-unicodeencodeerror-crontab
-        logger.debug("Saving markdown {}", file_name)
         with dest.open("w", encoding="utf-8") as f:
             f.write(content)
 
